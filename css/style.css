@@ -177,7 +177,6 @@ a:active{
 }
 
 a:link {
-	color: #0000d0; /* Цвет ссылок */
     padding: 2px; /* Поля вокруг текста */ 
    }
 a:hover {
