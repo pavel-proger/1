@@ -1,1 +1,0 @@
-# gumunyuk.github.io
