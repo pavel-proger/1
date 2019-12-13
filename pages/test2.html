@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>knowledgeTest</title>
+<link rel="stylesheet" type="text/css" href="https://pavel-proger.github.io/1/css/style.css">
+<meta charset="utf-8">
+</head>
+<body>
+	<style>
+   		body {
+    		background: #c7b39b url(https://pavel-proger.github.io/1/images/background.jpg); /* Цвет фона и путь к файлу */
+  		}
+  	</style>
+
+<style type="text/css">
+
+	.wrapper{
+		width: 600px;
+		height: 130px;
+		margin: 0 auto;
+		display: none;
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+	}
+
+</style>
+
+<script type="text/javascript">
+
+	var countQuest = 0;
+	var plus = 0;
+	var plus2 = 0;
+	var test_start = 0;
+	
+	function check(num){
+	
+		if(num == 4){ 
+			
+			document.getElementById('area').style.display='block'; //
+			document.getElementById('start').style.display='none';
+			document.getElementById('end').style.display='inline';
+
+			if(test_start == 0){
+			
+					//Массив вопросов
+				var questions = ["Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли"];
+
+
+					//Массивы вариантов ответов
+				var number1 = ["Разрабатывать программы и алгоритмы",
+				"Обрабатывать фотографии с помощью компьютерной программы",
+				"Ухаживать за домашними животными",
+				"Исследовать поведение животных в лабораторных условиях",
+				"Лечить людей или помогать им психически",
+				"Проводить предпродажное тестирование смартфонов",
+				"Внедрять системные решения",
+				"Следить за исправность техники",
+				"Вести свой блог",
+				"Заниматься ремонтом и техническим обслуживанием автомобильной техники",
+				"Заниматься дрессировкой собак",
+				"Проверять правильность заполнения документов",
+				"Заниматься поиском ископаемых",
+				"Обслуживать промышленное оборудование",
+				"Обучать учеников и студентов",
+				"Создавать новую одежду",
+				"Подбирать оптимальные маршруты для путешествий",
+				"Следить за сотоянием лесов",
+				"Участвовать в театральных постановках",
+				"Разрабатывать программы и алгоритмы"];	
+				var number2 = ["Вести занятия в фитнес зале",
+				"Управлять каким либо видом техники",
+				"Вести документооборот в компании",
+				"Анализировать изменения цен и акций на рынке",
+				"Ремонтировать компьтерную технику",
+				"Заниматься обработкой и анализом собранных данных",
+				"Анализировать и определять оптимальные способы доставки товаров",
+				"Заниматься оформлением выставок",
+				"Заниматься сборкой и настройкой интернет оборудования",
+				"Изучать микробиологию",
+				"Проверять правильность работы офисного оборудования",
+				"Конструировать новые приборы",
+				"Обрабатывать собранные данные",
+				"Систематизировать данные",
+				"Обрабатывать музыкальные композиции",
+				"Заниваться планированием праздничных событий",
+				"Создавать дизайн сайтов",
+				"Разводить редких животных",
+				"Управлять каким либо видом техники",
+				"Вести занятия в фитнес зале"];	
+
+				document.getElementById('question').innerHTML=questions[countQuest];
+				
+				document.getElementById('option1').innerHTML=number1[countQuest];
+				document.getElementById('option2').innerHTML=number2[countQuest];
+				
+				document.getElementById('questNum').innerHTML=1;
+
+				
+					//Массив правильных ответов
+				var answer = [0,1,0,0,1,0,0,0,1,0,1,1,0,0,1,1,1,1,1,1,0];
+				
+				test_start = 1;	
+			}
+		}
+		else{
+					//Массив вопросов
+				var questions = ["Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли","Вы бы предпочли"];
+
+					//Массивы вариантов ответов
+				var number1Arr = ["Разрабатывать программы и алгоритмы",
+				"Ухаживать за домашними животными",
+				"Обрабатывать фотографии с помощью компьютерной программы",
+				"Исследовать поведение животных в лабораторных условиях",
+				"Лечить людей или помогать им психически",
+				"Проводить предпродажное тестирование смартфонов",
+				"Внедрять системные решения",
+				"Следить за исправность техники",
+				"Вести свой блог",
+				"Заниматься ремонтом и техническим обслуживанием автомобильной техники",
+				"Заниматься дрессировкой собак",
+				"Проверять правильность заполнения документов",
+				"Заниматься поиском ископаемых",
+				"Обслуживать промышленное оборудование",
+				"Обучать учеников и студентов",
+				"Создавать новую одежду",
+				"Подбирать оптимальные маршруты для путешествий",
+				"Следить за сотоянием лесов",
+				"Участвовать в театральных постановках",
+				"Разрабатывать программы и алгоритмы"];	
+				var number2Arr = ["Вести занятия в фитнес зале",
+				"Управлять каким либо видом техники",
+				"Вести документооборот в компании",
+				"Заниваться планированием праздничных событий",
+				"Ремонтировать компьтерную технику",
+				"Заниматься обработкой и анализом собранных данных",
+				"Анализировать и определять оптимальные способы доставки товаров",
+				"Заниматься оформлением выставок",
+				"Заниматься сборкой и настройкой интернет оборудования",
+				"Изучать микробиологию",
+				"Проверять правильность работы офисного оборудования",
+				"Конструировать новые приборы",
+				"Обрабатывать собранные данные",
+				"Разводить редких животных",
+				"Обрабатывать музыкальные композиции",
+				"Анализировать изменения цен и акций на рынке",
+				"Создавать дизайн сайтов",
+				"Систематизировать данные",
+				"Управлять каким либо видом техники",
+				"Вести занятия в фитнес зале"];	
+				var number1Un = JSON.stringify(number1Arr);
+				localStorage.setItem("test2JSON", number1Un);// Сохранение данных при необходимости их можно изъять методом getItem
+				var number1 = JSON.parse(number1Un);
+				var number2Un = JSON.stringify(number2Arr);
+				localStorage.setItem("test3JSON", number2Un);// Сохранение данных при необходимости их можно изъять методом getItem
+				var number2 = JSON.parse(number2Un);
+
+					//Массив правильных ответов
+				var answerArr = [0,1,0,0,1,0,0,0,1,0,1,1,0,0,1,1,1,1,1,1,0];
+				var answer2Arr = [1,0,1,1,0,1,1,1,0,1,0,0,1,1,0,0,0,0,0,0,1];
+				var answerUn = JSON.stringify(answerArr);
+				localStorage.setItem("test4JSON", answerUn);// Сохранение данных при необходимости их можно изъять методом getItem
+				var answer = JSON.parse(answerUn);
+				var answer2Un = JSON.stringify(answer2Arr);
+				localStorage.setItem("test5JSON", answer2Un);// Сохранение данных при необходимости их можно изъять методом getItem
+				var answer2 = JSON.parse(answer2Un);
+
+			
+			if(num == answer[countQuest]) plus++;
+			if(num == answer2[countQuest]) plus2++;
+
+			document.getElementById('questNum').innerHTML=countQuest+2;
+			
+			if(questions.length - 1> countQuest){
+
+				countQuest++;
+				
+				document.getElementById('question').innerHTML=questions[countQuest];
+			
+				document.getElementById('option1').innerHTML=number1[countQuest];
+				document.getElementById('option2').innerHTML=number2[countQuest];
+			}
+			else{ 
+			
+				document.getElementById('area').style.display='none';//Придумай как отослать это по мылу
+				if (plus>plus2) {
+				alert('У Вас ' + plus + ' ответов выражающих вашу склонность к Техническим наукам\n'+'У Вас ' + plus2 + ' ответов выражающих вашу склонность к Гуманитарным наукам\nВам подходят професии связанные с техникой или с разведением и уходом за животными');
+				} else {
+				alert('У Вас ' + plus + ' ответов выражающих вашу склонность к Техническим наукам\n'+'У Вас ' + plus2 + ' ответов выражающих вашу склонность к Гуманитарным наукам\nВам подходят професии связанные с работой с документацией и медициной');
+				}
+			}
+		}
+	}
+	
+</script>
+
+	<div style="margin-top: 200px;">
+
+		 <div id="area" class="wrapper"> 
+
+			<center>			
+			
+				<p style="font-size: 38px;font-weight: bold;padding-top: 2px;color: #0f0;" id="question"></p>
+				<center>
+				<button onclick="check(0)" class="button1 buttomProperties" id="option1" style="width: 600px;"></button>
+				</center>
+				<br>
+				<center>
+				<button onclick="check(1)" class="button1 buttomProperties" id="option2" style="width: 600px;"></button>
+				</center>
+				<br>
+			
+			</center>
+				<p style="font-size: 20px;font-weight: bold;padding-top: 2px;color: #0f0;">Вопрос</p>
+				<p style="font-size: 20px;font-weight: bold;padding-top: 2px;color: #0f0;" id="questNum"></p>				
+				<p style="font-size: 20px;font-weight: bold;padding-top: 2px;color: #0f0;"> из 20</p>
+		</div>
+	
+	</div>	
+	
+	<br><br><br><br><center>
+		<button id="start" class="button1 buttomProperties" onclick="check(4)">Приступить к тесту</button>
+		<script type="text/javascript"> var curent_url = document.URL; document.write("<a id='end' style='display: none;' class='button1 buttomProperties' href='" + curent_url + "'>Начать сначала</a>"); </script>	
+	</center>
+	
+	<br><br><br><br>><center><br> 
+		<a class="button1 buttomProperties"  href="test.html">Назад</a>
+	</center>
+
+</body>
+</html>
